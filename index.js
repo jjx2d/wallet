@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const cors = require('cors');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://jeffersonuche:WIpD50OFEmK21Yld@cluster0.j7lvsmz.mongodb.net/?retryWrites=true&w=majority";
 
@@ -9,6 +10,8 @@ const connectDB = require('./dbConn');
 
 // Connect to MongoDB
 connectDB();
+// Use the CORS middleware
+app.use(cors());
 // built-in middleware for json 
 app.use(express.json());
 app.use('/pin', require('./pin'));
