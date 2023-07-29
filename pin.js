@@ -6,9 +6,9 @@ const handleNewPin = async(req, res)=>{
 	    "pin": data
     });
 console.log(newPin);
-	res.status(201).json({"success":"New pin created!"});
+	res.status(201);
 		}catch (err){
-		res.status(500).json({"message":err.message});
+		res.status(500);
 		}
 }
 
